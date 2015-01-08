@@ -1,0 +1,40 @@
+LAYER {
+	1-7 {
+        TYPE: RASTER  
+		NAME: 'land_cov'
+        GROUP: 'default'
+        METADATA {{
+              "wms_title" "land_cov"
+              "wms_name"   "land_cov"
+              "wms_include_items" "id" 
+        }}  
+        TEMPLATE: 'blank.html' 
+        DATA{
+             1-6:"/opt/scribeui/workspaces/mgbm/mapgears_basemap/data/NE2_LR_LC/NE2_LR_LC.tif"
+             7-9:"/opt/scribeui/workspaces/mgbm/mapgears_basemap/data/NE2_HR_LC/NE2_HR_LC.tif"
+        }
+        PROJECTION {{
+            'init=epsg:4326'
+        }}
+
+	}
+}
+
+
+LAYER {
+    1-16 {
+        NAME: 'ocean'
+        TYPE: POLYGON
+        @layerconfig
+        DATA {
+            1-5: '110m_physical/ne_110m_ocean'
+            6-10: '50m_physical/ne_50m_ocean'
+            11-16: '10m_physical/ne_10m_ocean'		
+	    }
+        CLASS {
+            STYLE {
+                COLOR: '#C6E2F2'
+            }
+        }
+    }
+}

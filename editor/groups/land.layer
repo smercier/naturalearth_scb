@@ -1,0 +1,42 @@
+
+
+LAYER {
+    1-16 {
+        NAME: 'land'
+        TYPE: POLYGON
+        @layerconfig
+        DATA {
+            1-5: '110m_physical/ne_110m_land'
+            6-10: '50m_physical/ne_50m_land'
+            11-16: '10m_physical/ne_10m_land'
+	    }
+        opacity: 75
+        CLASS {
+            STYLE {
+                COLOR: '#EEECDF'
+            }
+        }
+    }
+}
+
+LAYER {
+    6-16 {
+        NAME: 'glacier'
+        TYPE: POLYGON
+        @layerconfig
+        DATA {
+            6-10: '50m_physical/ne_50m_glaciated_areas.shp'
+            11-16: '10m_physical/ne_10m_glaciated_areas.shp'
+	    }
+        CLASS {
+            STYLE {
+                ## COLOR: 255 0 0
+                SYMBOL: 'glacial_debris_50k_pix'
+            }
+        }
+    }
+}
+
+
+
+
